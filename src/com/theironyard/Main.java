@@ -8,11 +8,11 @@ import java.util.Scanner;
 public class Main {
 
     //    refactor
-    public static ArrayList<Post> parsePost() throws FileNotFoundException {
+    public static ArrayList<Post> parsePost(String fileName) throws FileNotFoundException {
 
         ArrayList<Post> posts = new ArrayList<>();
         // parse file
-        File f = new File("posts.txt");
+        File f = new File(fileName);
         Scanner fileScanner = new Scanner(f);
         while (fileScanner.hasNext()) {
             String line = fileScanner.nextLine();
@@ -36,7 +36,7 @@ public class Main {
 // end of refactor
 
     public static void main(String[] args) throws FileNotFoundException {
-        ArrayList<Post> posts = parsePost();
+        ArrayList<Post> posts = parsePost("posts.txt");
 
 //      Start loop
         Scanner consoleScanner = new Scanner(System.in);
